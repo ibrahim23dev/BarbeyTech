@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Me from '../Assets/me.jpg'; // Adjust the path based on your folder structure
+import Me from '../assets/me.jpg'; // Adjust the path based on your folder structure
 
 const TestimonialsAndFAQs = () => {
   const [activeFaq, setActiveFaq] = useState(null);

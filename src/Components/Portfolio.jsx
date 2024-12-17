@@ -1,10 +1,10 @@
 import React from "react";
-import Project1 from "../Assets/Tech/adbiyas.jpeg";
-import Project2 from "../Assets/Tech/adbiysaSoluation.jpeg";
-import Project3 from "../Assets/Tech/grocery.jpeg";
-import Project4 from "../Assets/Tech/Text.jpeg";
-import Project6 from "../Assets/Tech/UsaJob.jpeg";
-import Project5 from "../Assets/Tech/HasanTax.jpeg";
+import Project1 from "../assets/Tech/adbiyas.jpeg";
+import Project2 from "../assets/Tech/adbiysaSoluation.jpeg";
+import Project3 from "../assets/Tech/grocery.jpeg";
+import Project4 from "../assets/Tech/Text.jpeg";
+import Project6 from "../assets/Tech/UsaJob.jpeg";
+import Project5 from "../assets/Tech/HasanTax.jpeg";
 
 const Portfolio = () => {
   const projects = [

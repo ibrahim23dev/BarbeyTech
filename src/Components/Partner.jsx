@@ -1,10 +1,10 @@
 import React from "react";
-import Microsoft from '../Assets/Tech/microsoft.png';
-import Ucb from '../Assets/Tech/Ucb.png';
-import Oracle from '../Assets/Tech/oracle_logo.webp';
-import Cisco from '../Assets/Tech/ciscologo.png';
-import Talitok from '../Assets/Tech/talitoklogo.png';
-import Dbbl from '../Assets/Tech/Dbbl.png';
+import Microsoft from '../assets/Tech/microsoft.png';
+import Ucb from '../assets/Tech/Ucb.png';
+import Oracle from '../assets/Tech/oracle_logo.webp';
+import Cisco from '../assets/Tech/ciscologo.png';
+import Talitok from '../assets/Tech/talitoklogo.png';
+import Dbbl from '../assets/Tech/Dbbl.png';
 
 function PartnerSection() {
   const partners = [

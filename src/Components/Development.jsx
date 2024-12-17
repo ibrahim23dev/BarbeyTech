@@ -1,13 +1,13 @@
 import React from "react";
-import Web from "../Assets/Tech/web1.png";
-import Mobile from "../Assets/Tech/mobile2.png";
-import Github from "../Assets/Tech/github.png";
-import Bitbucket from "../Assets/Tech/bitbucket.png";
-import Gitlab from "../Assets/Tech/gitlab.png";
-import Testing from "../Assets/Tech/testing.png";
-import Aws from "../Assets/Tech/aws.png";
-import Cloud from "../Assets/Tech/cloud.png";
-import Othercloud from "../Assets/Tech/other-cloud.png";
+import Web from "../assets/Tech/web1.png";
+import Mobile from "../assets/Tech/mobile2.png";
+import Github from "../assets/Tech/github.png";
+import Bitbucket from "../assets/Tech/bitbucket.png";
+import Gitlab from "../assets/Tech/gitlab.png";
+import Testing from "../assets/Tech/testing.png";
+import Aws from "../assets/Tech/aws.png";
+import Cloud from "../assets/Tech/cloud.png";
+import Othercloud from "../assets/Tech/other-cloud.png";
 
 export default function Home() {
   return (
