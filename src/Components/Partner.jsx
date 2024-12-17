@@ -1,5 +1,5 @@
 import React from "react";
-import Microsoft from '../assets/Tech/microsoft.png';
+import microsoft from '../assets/Tech/microsoft.png';
 import Ucb from '../assets/Tech/Ucb.png';
 import Oracle from '../assets/Tech/oracle_logo.webp';
 import Cisco from '../assets/Tech/ciscologo.png';
@@ -8,7 +8,7 @@ import Dbbl from '../assets/Tech/Dbbl.png';
 
 function PartnerSection() {
   const partners = [
-    { name: "Microsoft Gold Partner", logo: Microsoft },
+    { name: "Microsoft Gold Partner", logo: microsoft },
     { name: "SAP Gold Partner", logo: Ucb },
     { name: "Dell", logo: Oracle },
     { name: "Oracle", logo: Cisco },
@@ -36,7 +36,7 @@ function PartnerSection() {
               key={index}
               className="flex items-center justify-center bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition-shadow"
             >
-              {/* Replacing Next.js Image component with standard img tag */}
+              {/* Use imported images */}
               <img
                 src={partner.logo}
                 alt={partner.name}
