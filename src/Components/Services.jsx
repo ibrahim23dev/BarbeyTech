@@ -1,6 +1,7 @@
 import React from "react";
+import { motion } from "framer-motion";
 
-// Image imports replaced with relative paths
+// Image imports
 import Tech1 from "../assets/Tech/tech1.png";
 import Tech2 from "../assets/Tech/tech2.png";
 import Tech3 from "../assets/Tech/tech3.png";
@@ -43,7 +44,7 @@ const solutions = [
 
 function Services() {
   return (
-    <div className="bg-gray-100 min-h-screen px-10 pt-10">
+    <div className="bg-gray-100 min-h-screen pt-10">
       {/* Title Section */}
       <h1 className="text-2xl text-center mb-10 sm:text-3xl md:text-4xl font-bold text-gray-800">
         Empowering Efficiency,{" "}
@@ -51,19 +52,24 @@ function Services() {
       </h1>
 
       {/* Solutions Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-6 md:px-16">
+      <div className="container mx-auto mb-8 px-4 md:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {solutions.map((solution, index) => (
-          <div
+          <motion.div
             key={index}
-            className="relative group h-[300px] bg-white rounded-lg border border-gray-200 shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-105"
+            whileHover={{ scale: 1.05, boxShadow: "0px 10px 15px rgba(0,0,0,0.2)" }}
+            whileTap={{ scale: 0.95 }}
+            className="relative group h-[340px] bg-white rounded-lg border border-gray-200 shadow-lg overflow-hidden transition duration-300"
           >
-            <div className="p-6 text-center">
-              {/* Image Section */}
+            {/* Image Section */}
+            <div className="p-6 text-center flex flex-col justify-between h-full">
               <div className="flex justify-center mb-4">
-                <img
+                <motion.img
                   src={solution.image}
                   alt={solution.title}
-                  className="object-contain w-[190px] h-[190px]"
+                  className="object-contain w-[180px] h-[180px]"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
                 />
               </div>
 
@@ -75,7 +81,18 @@ function Services() {
               {/* Description */}
               <p className="text-sm text-gray-600">{solution.description}</p>
             </div>
-          </div>
+
+            {/* Hover Overlay */}
+            <motion.div
+              className="absolute inset-0 bg-purple-500 opacity-0 group-hover:opacity-80 transition duration-300 flex items-center justify-center"
+              initial={{ opacity: 0 }}
+              whileHover={{ opacity: 0.8 }}
+            >
+              <p className="text-white text-lg font-semibold">
+                Learn More
+              </p>
+            </motion.div>
+          </motion.div>
         ))}
       </div>
     </div>

@@ -9,25 +9,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const UpperHeader = () => {
-  const [randomData, setRandomData] = useState({
-    email: "user@example.com",
-    phone: "+1000000000",
-    location: "Default Street, Default City, Default Country",
-  });
-
-  // Generate random data on the client side
-  useEffect(() => {
-    const randomEmail = "user" + Math.floor(Math.random() * 1000) + "@example.com";
-    const randomPhone = "+1" + Math.floor(Math.random() * 1000000000);
-    const randomLocation = `Street ${Math.floor(Math.random() * 100)}, City ${Math.floor(Math.random() * 10)}, Country`;
-
-    setRandomData({
-      email: randomEmail,
-      phone: randomPhone,
-      location: randomLocation,
-    });
-  }, []);
-
+ 
   // Slider settings for responsiveness
   const settings = {
     dots: false,
@@ -61,15 +43,15 @@ const UpperHeader = () => {
   const headerItems = [
     {
       icon: <MdMarkEmailUnread className="w-6 h-6 md:w-8 md:h-8 text-[#9747FF]" />,
-      text: randomData.email,
+      text: 'contact@barbeytech.com',
     },
     {
       icon: <IoLogoWhatsapp className="w-6 h-6 md:w-8 md:h-8 text-[#9747FF]" />,
-      text: randomData.phone,
+      text: '01315974775',
     },
     {
       icon: <FaLocationDot className="w-6 h-6 md:w-8 md:h-8 text-[#9747FF]" />,
-      text: randomData.location,
+      text: 'New York, United States',
     },
     {
       icon: <MdOutlineAccessTimeFilled className="w-6 h-6 md:w-8 md:h-8 text-[#9747FF]" />,
@@ -77,13 +59,13 @@ const UpperHeader = () => {
     },
     {
       icon: <BiSolidContact className="w-6 h-6 md:w-8 md:h-8 text-[#9747FF]" />,
-      text: "Contact Us",
+      text: "+1 (347) 698-6704",
     },
   ];
 
   return (
     <div className="bg-white text-gray-800 py-3 px-4 flex justify-center items-center shadow-md">
-      <div className="w-full max-w-[1200px]">
+      <div className="w-full justify-center items-center max-w-[900px]">
         <Slider {...settings}>
           {headerItems.map((item, index) => (
             <div key={index} className="flex justify-center items-center px-4">

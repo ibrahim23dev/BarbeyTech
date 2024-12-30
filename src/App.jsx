@@ -12,6 +12,7 @@ import Contactus from "./other/ContactUs";
 import Proatfolio from "./other/Portfolio";
 import Product from "./other/product";
 import Partnership from "./other/Partnership";
+import HigherDev from "./other/highrDev";
 function App() {
   return (
     <BrowserRouter>
@@ -25,11 +26,12 @@ function App() {
           <Route path="/software-development" element={<Softwares />} />
           <Route path="/ui-ux-design" element={<Uiuxs />} />
           <Route path="/graphic-design" element={<Grapics />} />
-          <Route path="/wedo" element={<Wedo />} />
-          <Route path="/contact" element={<Contactus />} />
-          <Route path="/proatfoilo" element={<Proatfolio />} />
+          <Route path="/we-do" element={<Wedo />} />
+          <Route path="/contact-us" element={<Contactus />} />
+          <Route path="/portfolio" element={<Proatfolio />} />
+           <Route path="/hire-developer" element={<HigherDev />} />
           <Route path="/product" element={<Product />} />
-          <Route path="/partnership" element={<Partnership />} />
+          <Route path="/partnership-program" element={<Partnership />} />
         </Route>
       </Routes>
     </BrowserRouter>

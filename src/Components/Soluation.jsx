@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSpring, animated } from 'react-spring';
 
 // Importing images
 import Tech1 from '../assets/Tech/Tech7.png';
@@ -37,10 +38,16 @@ const solutions = [
 ];
 
 function Home() {
+  const fadeIn = useSpring({
+    from: { opacity: 0, transform: 'translateY(20px)' },
+    to: { opacity: 1, transform: 'translateY(0px)' },
+    config: { duration: 800 },
+  });
+
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <animated.div style={fadeIn} className="bg-gray-100 min-h-screen flex flex-col">
       {/* Header */}
-      <div className="text-center mb-12 px-4">
+      <div className="text-center py-8 px-4 bg-purple-100 shadow-md">
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">
           Smart, Preconfigured,{" "}
           <span className="text-purple-500">Dynamic Business Solutions</span>
@@ -48,45 +55,46 @@ function Home() {
       </div>
 
       {/* Grid Layout */}
-      <div className="container mx-auto mb-8 px-4 md:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="container mx-auto px-4 md:px-8 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {solutions.map((solution, index) => (
-          <div
+          <animated.div
             key={index}
-            className="group relative flex flex-col items-center p-6 bg-white rounded-lg shadow-lg border-2 border-transparent transition-transform transform hover:scale-105 hover:border-purple-500"
+            className="flex flex-col items-center bg-white rounded-lg shadow-lg p-6 hover:scale-105 transition-transform"
+            style={useSpring({
+              from: { opacity: 0 },
+              to: { opacity: 1 },
+              config: { duration: 600, delay: index * 100 },
+            })}
           >
             {/* Image */}
-            <div className="w-full flex justify-center">
+            <div className="w-full h-[200px] flex justify-center items-center bg-gray-50 rounded-md mb-4">
               <img
                 src={solution.image}
                 alt={solution.title}
-                width={300}
-                height={200}
-                className="transition-transform duration-300 group-hover:scale-110"
+                className="w-[200px] h-[150px] object-contain"
               />
             </div>
 
             {/* Title */}
-            <h2 className="text-center text-lg sm:text-xl font-semibold text-gray-700 mt-4">
+            <h2 className="text-lg sm:text-xl font-semibold text-gray-700 mb-4 text-center">
               {solution.title}
             </h2>
 
             {/* Button */}
-            <div className="text-center mt-4">
-              <button className="px-4 py-2 bg-purple-500 text-white rounded-full shadow-lg hover:bg-purple-600 transition">
-                Details
-              </button>
-            </div>
-          </div>
+            <button className="px-4 py-2 bg-purple-500 text-white rounded-full shadow-lg hover:bg-purple-600 transition">
+              Details
+            </button>
+          </animated.div>
         ))}
       </div>
 
       {/* See More Button */}
-      <div className="text-center mt-10">
+      <div className="text-center py-6">
         <button className="px-6 py-3 bg-purple-500 text-white text-lg rounded-full shadow-lg hover:bg-purple-600 transition">
           See More
         </button>
       </div>
-    </div>
+    </animated.div>
   );
 }
 

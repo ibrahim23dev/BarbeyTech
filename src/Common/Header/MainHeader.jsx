@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react";
 import { FaRegUser } from "react-icons/fa";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
 import logo from "../../assets/logo.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showServicesDropdown, setShowServicesDropdown] = useState(false);
+  const location = useLocation(); // To track the current route
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -20,14 +21,23 @@ const Header = () => {
     return () => document.removeEventListener("click", handleClickOutside);
   }, []);
 
+  // Close the dropdown menu when the route changes
+  useEffect(() => {
+    setShowServicesDropdown(false);
+  }, [location]); // Whenever the route changes, close the dropdown
+
+  // Close the dropdown when any link is clicked in the "We Do", "Product" etc. section
+  const handleLinkClick = () => {
+    setShowServicesDropdown(false);
+  };
+
   return (
     <header className="bg-gradient-to-r from-[#AD37E3] to-[#7581F7] text-white sticky top-0 z-50 shadow-md">
       <div className="container mx-auto flex justify-between items-center py-4 px-4 md:px-6">
         <div className="flex items-center">
           <Link to="/">
-<img src={logo} alt="Logo" className="w-[150px] h-auto" />
+            <img src={logo} alt="Logo" className="w-[150px] h-auto" />
           </Link>
-          
         </div>
 
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
@@ -40,32 +50,47 @@ const Header = () => {
             </button>
             {showServicesDropdown && (
               <div className="absolute top-full mt-2 w-[200px] left-0 bg-[#9747FF] text-white p-4 space-y-2 shadow-md rounded-md">
-                <Link to="/web-development" className="block hover:underline">
+                <Link to="/web-development" className="block hover:underline" onClick={handleLinkClick}>
                   Web Development
                 </Link>
-                <Link to="/software-development" className="block hover:underline">
+                <Link to="/software-development" className="block hover:underline" onClick={handleLinkClick}>
                   Software Development
                 </Link>
-                <Link to="/ui-ux-design" className="block hover:underline">
+                <Link to="/ui-ux-design" className="block hover:underline" onClick={handleLinkClick}>
                   UI/UX Design
                 </Link>
-                <Link to="/graphic-design" className="block hover:underline">
+                <Link to="/graphic-design" className="block hover:underline" onClick={handleLinkClick}>
                   Graphic Design
                 </Link>
-                <Link to="/mobile-app-development" className="block hover:underline">
+                <Link to="/mobile-app-development" className="block hover:underline" onClick={handleLinkClick}>
                   Mobile App Development
                 </Link>
               </div>
             )}
           </div>
-          {["We Do", "Product", "Portfolio", "Partnership Program", "Hire Developer", "Contact Us"].map((item, index) => (
-            <a key={index} href="#" className="hover:underline hover:text-gray-200">
-              {item}
-            </a>
-          ))}
-          <a href="#" className="hover:text-gray-200 transition duration-200">
+
+          <Link to="/we-do" className="hover:underline hover:text-gray-200" onClick={handleLinkClick}>
+            We Do
+          </Link>
+          <Link to="/product" className="hover:underline hover:text-gray-200" onClick={handleLinkClick}>
+            Product
+          </Link>
+          <Link to="/portfolio" className="hover:underline hover:text-gray-200" onClick={handleLinkClick}>
+            Portfolio
+          </Link>
+          <Link to="/partnership-program" className="hover:underline hover:text-gray-200" onClick={handleLinkClick}>
+            Partnership Program
+          </Link>
+          <Link to="/hire-developer" className="hover:underline hover:text-gray-200" onClick={handleLinkClick}>
+            Hire Developer
+          </Link>
+          <Link to="/contact-us" className="hover:underline hover:text-gray-200" onClick={handleLinkClick}>
+            Contact Us
+          </Link>
+
+          <Link to="/profile" className="hover:text-gray-200 transition duration-200">
             <FaRegUser className="w-6 h-6" />
-          </a>
+          </Link>
         </nav>
 
         <div className="md:hidden">
@@ -98,36 +123,51 @@ const Header = () => {
               </button>
               {showServicesDropdown && (
                 <div className="mt-2 ml-4 space-y-2">
-                  <Link to="/web-development" className="block hover:underline">
+                  <Link to="/web-development" className="block hover:underline" onClick={handleLinkClick}>
                     Web Development
                   </Link>
-                  <Link to="/software-development" className="block hover:underline">
+                  <Link to="/software-development" className="block hover:underline" onClick={handleLinkClick}>
                     Software Development
                   </Link>
-                  <Link to="/ui-ux-design" className="block hover:underline">
+                  <Link to="/ui-ux-design" className="block hover:underline" onClick={handleLinkClick}>
                     UI/UX Design
                   </Link>
-                  <Link to="/graphic-design" className="block hover:underline">
+                  <Link to="/graphic-design" className="block hover:underline" onClick={handleLinkClick}>
                     Graphic Design
                   </Link>
-                  <Link to="/website-design" className="block hover:underline">
+                  <Link to="/website-design" className="block hover:underline" onClick={handleLinkClick}>
                     Website Design
                   </Link>
-                  <Link to="/mobile-app-development" className="block hover:underline">
+                  <Link to="/mobile-app-development" className="block hover:underline" onClick={handleLinkClick}>
                     Mobile App Development
                   </Link>
                 </div>
               )}
             </div>
-            {["We Do", "Product", "Portfolio", "Partnership Program", "Hire Developer", "Contact Us"].map((item, index) => (
-              <a key={index} href="#" className="hover:underline hover:text-gray-200">
-                {item}
-              </a>
-            ))}
-            <a href="#" className="flex items-center gap-2 hover:text-gray-200">
+
+            <Link to="/we-do" className="hover:underline hover:text-gray-200" onClick={handleLinkClick}>
+              We Do
+            </Link>
+            <Link to="/product" className="hover:underline hover:text-gray-200" onClick={handleLinkClick}>
+              Product
+            </Link>
+            <Link to="/portfolio" className="hover:underline hover:text-gray-200" onClick={handleLinkClick}>
+              Portfolio
+            </Link>
+            <Link to="/partnership-program" className="hover:underline hover:text-gray-200" onClick={handleLinkClick}>
+              Partnership Program
+            </Link>
+            <Link to="/hire-developer" className="hover:underline hover:text-gray-200" onClick={handleLinkClick}>
+              Hire Developer
+            </Link>
+            <Link to="/contact-us" className="hover:underline hover:text-gray-200" onClick={handleLinkClick}>
+              Contact Us
+            </Link>
+
+            <Link to="/profile" className="flex items-center gap-2 hover:text-gray-200" onClick={handleLinkClick}>
               <FaRegUser className="text-white w-6 h-6" />
-              Login
-            </a>
+              Profile
+            </Link>
           </nav>
         </div>
       )}

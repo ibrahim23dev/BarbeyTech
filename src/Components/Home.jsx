@@ -1,4 +1,4 @@
-import Reac, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Services from "./Services";
 import Solutions from "./Soluation";
 import Development from "./Development";
@@ -8,6 +8,7 @@ import Testimonial from "./Testimonial";
 import Banner1 from "../assets/Banner/Banner1.jpeg";
 import Banner2 from "../assets/Banner/Banner2.jpeg";
 import Banner3 from "../assets/Banner/Banner3.jpeg";
+
 function Home() {
   const [currentImage, setCurrentImage] = useState(0);
   const images = [
@@ -30,31 +31,36 @@ function Home() {
         "Tristique etiam quis bibendum duis mauris dictum molestie enim ut. Elementum tempus adipiscing nulla.",
     },
   ];
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 3000); // Change slide every 3 seconds
+    }, 4000); // Change slide every 4 seconds
     return () => clearInterval(interval);
   }, []);
+
   return (
-    <div>
+    <div className="bg-gray-100">
+      {/* Banner Section */}
       <div className="relative h-[500px] md:h-[600px] lg:h-[700px] overflow-hidden">
         <img
           src={images[currentImage].src}
           alt="Banner"
-          className="w-full h-full object-cover transition-transform duration-700"
+          className="w-full h-full object-cover transition-transform duration-700 ease-in-out"
         />
         <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-white px-4 md:px-8 lg:px-16 text-center">
-          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold tracking-wide">
             {images[currentImage].title}
           </h1>
-          <p className="mt-4 text-sm md:text-base lg:text-lg max-w-2xl">
+          <p className="mt-4 text-sm md:text-base lg:text-lg max-w-3xl">
             {images[currentImage].description}
           </p>
-          <button className="mt-6 px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-full transition-all duration-300">
+          <button className="mt-6 px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full transition-all duration-300 text-lg">
             Start Now
           </button>
         </div>
+
+        {/* Slide Navigation */}
         <div className="absolute bottom-4 w-full flex justify-center space-x-2">
           {images.map((_, index) => (
             <button
@@ -67,15 +73,15 @@ function Home() {
           ))}
         </div>
       </div>
-      <div>
-        <div>
-          <Services />
-          <Solutions />
-          <Development />
-          <Portfolio />
-          <Partner />
-          <Testimonial />
-        </div>
+
+      {/* Other Sections */}
+      <div className="py-16">
+        <Services />
+        <Solutions />
+        <Development />
+        <Portfolio />
+        <Partner />
+        <Testimonial />
       </div>
     </div>
   );
