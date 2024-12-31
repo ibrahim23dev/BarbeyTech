@@ -301,85 +301,62 @@ export default function Home() {
     </div>
 
       {/* Solutions Section */}
-      <div className="container justify-center items-center mx-auto grid sm:grid-cols-1 md:grid-cols-2 gap-8 px-4">
-        <div className="   p-6 sm:p-8">
-          <div className=" bg-[#9797F8] w-[271px] items-center justify-center mb-5  h-[60px] rounded-lg text-center">  <h2 className="text-3xl font-bold text-white mt-4">Web Solutions</h2></div>
-        
-          <ul className="text-gray-600 space-y-2">
-           <div className="border-2 w-[200px] h-[50px] bg-[#2563eb] flex rounded-full justify-center items-center gap-2 shadow-md hover:bg-[#1d4ed8] transition duration-300">
-      {/* Icon */}
-      <span className="text-white text-lg">
-        <TbBrandBooking />
-      </span>
-      {/* Text */}
-      <span className="font-semibold text-white">Booking Apps</span>
-            </div>
-            <div className="border-2 w-[200px] h-[50px] bg-[#2563eb] flex rounded-full justify-center items-center gap-2 shadow-md hover:bg-[#1d4ed8] transition duration-300">
-      {/* Icon */}
-      <span className="text-white text-lg">
-        <TbBrandBooking />
-      </span>
-      {/* Text */}
-      <span className="font-semibold text-white">Utility Apps</span>
-            </div>
-            <div className="border-2 w-[200px] h-[50px] bg-[#2563eb] flex rounded-full justify-center items-center gap-2 shadow-md hover:bg-[#1d4ed8] transition duration-300">
-      {/* Icon */}
-      <span className="text-white text-lg">
-        <TbBrandBooking />
-      </span>
-      {/* Text */}
-      <span className="font-semibold text-white">Financial Apps</span>
-            </div>
-            <div className="border-2 w-[200px] h-[50px] bg-[#2563eb] flex rounded-full justify-center items-center gap-2 shadow-md hover:bg-[#1d4ed8] transition duration-300">
-      {/* Icon */}
-      <span className="text-white text-lg">
-        <TbBrandBooking />
-      </span>
-      {/* Text */}
-      <span className="font-semibold text-white">eCommerce Apps</span>
-    </div>
-            
-          </ul>
-        </div>
-        <div className="   p-6 sm:p-8">
-         <div className=" bg-[#9797F8] w-[271px] items-center justify-center mb-5  h-[60px] rounded-lg text-center">  <h2 className="text-3xl font-bold text-white mt-4">Mobile Solutions</h2></div>
-          <ul className="text-gray-600 space-y-2">
-           <div className="border-2 w-[200px] h-[50px] bg-[#2563eb] flex rounded-full justify-center items-center gap-2 shadow-md hover:bg-[#1d4ed8] transition duration-300">
-      {/* Icon */}
-      <span className="text-white text-lg">
-        <TbBrandBooking />
-      </span>
-      {/* Text */}
-      <span className="font-semibold text-white">Booking Apps</span>
-            </div>
-            <div className="border-2 w-[200px] h-[50px] bg-[#2563eb] flex rounded-full justify-center items-center gap-2 shadow-md hover:bg-[#1d4ed8] transition duration-300">
-      {/* Icon */}
-      <span className="text-white text-lg">
-        <TbBrandBooking />
-      </span>
-      {/* Text */}
-      <span className="font-semibold text-white">Utility Apps</span>
-            </div>
-            <div className="border-2 w-[200px] h-[50px] bg-[#2563eb] flex rounded-full justify-center items-center gap-2 shadow-md hover:bg-[#1d4ed8] transition duration-300">
-      {/* Icon */}
-      <span className="text-white text-lg">
-        <TbBrandBooking />
-      </span>
-      {/* Text */}
-      <span className="font-semibold text-white">Financial Apps</span>
-            </div>
-            <div className="border-2 w-[200px] h-[50px] bg-[#2563eb] flex rounded-full justify-center items-center gap-2 shadow-md hover:bg-[#1d4ed8] transition duration-300">
-      {/* Icon */}
-      <span className="text-white text-lg">
-        <TbBrandBooking />
-      </span>
-      {/* Text */}
-      <span className="font-semibold text-white">eCommerce Apps</span>
-    </div>
-            
-          </ul>
-        </div>
+<div className="container mx-auto px-4 py-10">
+  <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-12 items-center justify-center">
+    
+    {/* Web Solutions */}
+    <div className="p-6">
+      <div className="bg-blue-500 w-full max-w-[300px] mx-auto h-[70px] rounded-lg flex items-center justify-center mb-8 shadow-lg">
+        <h2 className="text-2xl md:text-3xl font-bold text-white">Web Solutions</h2>
       </div>
+      <ul className="space-y-4">
+        {[
+          { text: "Booking Apps", color: "bg-blue-500" },
+          { text: "Utility Apps", color: "bg-green-500" },
+          { text: "Financial Apps", color: "bg-purple-500" },
+          { text: "eCommerce Apps", color: "bg-red-500" },
+        ].map(({ text, color }, index) => (
+          <div
+            key={index}
+            className={`${color} w-full max-w-[250px] mx-auto h-[60px] flex items-center justify-center gap-3 rounded-full shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300`}
+          >
+            <span className="text-white text-2xl">
+              <TbBrandBooking />
+            </span>
+            <span className="text-white font-semibold">{text}</span>
+          </div>
+        ))}
+      </ul>
+    </div>
+
+    {/* Mobile Solutions */}
+    <div className="p-6">
+      <div className="bg-indigo-500 w-full max-w-[300px] mx-auto h-[70px] rounded-lg flex items-center justify-center mb-8 shadow-lg">
+        <h2 className="text-2xl md:text-3xl font-bold text-white">Mobile Solutions</h2>
+      </div>
+      <ul className="space-y-4">
+        {[
+          { text: "Booking Apps", color: "bg-indigo-500" },
+          { text: "Utility Apps", color: "bg-teal-500" },
+          { text: "Financial Apps", color: "bg-orange-500" },
+          { text: "eCommerce Apps", color: "bg-pink-500" },
+        ].map(({ text, color }, index) => (
+          <div
+            key={index}
+            className={`${color} w-full max-w-[250px] mx-auto h-[60px] flex items-center justify-center gap-3 rounded-full shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300`}
+          >
+            <span className="text-white text-2xl">
+              <TbBrandBooking />
+            </span>
+            <span className="text-white font-semibold">{text}</span>
+          </div>
+        ))}
+      </ul>
+    </div>
+
+  </div>
+</div>
+
     </div>
   );
 }
