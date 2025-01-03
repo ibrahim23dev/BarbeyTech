@@ -5,6 +5,7 @@ import Graphic from "../assets/grapic.png"
 import Graphic2 from "../assets/grapic2.png"
 import Project1 from "../assets/Tech/adbiyas.jpeg";
 import Project2 from "../assets/Tech/adbiysaSoluation.jpeg";
+import { FaCheckCircle } from "react-icons/fa";
 import Project3 from "../assets/Tech/grocery.jpeg";
 const WebDevelopmentFeatures = () => {
   const fadeIn = {
@@ -15,6 +16,13 @@ const WebDevelopmentFeatures = () => {
     { title: "Adbiyas Tour", image: Project1 },
     { title: "Adbiyas Solution", image: Project2 },
     { title: "Adbiyas Grocery", image: Project3 },
+  ];
+
+  const benefits = [
+    "Custom development tailored to your needs.",
+    "Responsive and mobile-friendly designs.",
+    "Enhanced performance optimization.",
+    "Expert team with years of experience.",
   ];
 
   return (

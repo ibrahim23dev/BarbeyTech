@@ -70,13 +70,13 @@ function HireDev() {
         </div>
 
         {/* Benefit 2 */}
+
         <div className="bg-white p-8 rounded-lg shadow-lg">
           <h3 className="text-2xl font-semibold text-gray-800">Flexibility & Control</h3>
           <p className="mt-4 text-gray-600">
             Hire developers on a full-time, part-time, or project basis. You control the collaboration.
           </p>
-        </div>
-
+        </div> 
         {/* Benefit 3 */}
         <div className="bg-white p-8 rounded-lg shadow-lg">
           <h3 className="text-2xl font-semibold text-gray-800">Transparent Pricing</h3>
