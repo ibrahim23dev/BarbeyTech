@@ -13,6 +13,7 @@ import Proatfolio from "./other/Portfolio";
 import Product from "./other/product";
 import Partnership from "./other/Partnership";
 import HigherDev from "./other/highrDev";
+import Logins from "./Components/Login";
 function App() {
   return (
     <BrowserRouter>
@@ -32,6 +33,7 @@ function App() {
            <Route path="/hire-developer" element={<HigherDev />} />
           <Route path="/product" element={<Product />} />
           <Route path="/partnership-program" element={<Partnership />} />
+          <Route path="/profile" element={<Logins />} />
         </Route>
       </Routes>
     </BrowserRouter>
